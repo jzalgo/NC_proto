@@ -21,8 +21,37 @@
 
       <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script>
+
+      $('#goright').click(function() {
+      $('#odbox').toggle('fast');
+      });
+
+      $('#goleft').click(function() {
+      $('#btjbox').toggle('fast');
+      });
+
+      </script>
+
 </head>
+
 <style>
+#odbox {
+    margin-top: 0px;
+    margin-bottom: 1000px;
+    margin-right: 0px;
+    margin-left: 500px;
+}
+
+#btjbox {
+    margin-top: 0px;
+    margin-bottom: 1000px;
+    margin-right: 500px;
+    margin-left: 0px;
+}
+
 .mySlides {
   display:none;
   height: 300px;
@@ -39,56 +68,6 @@
 .w3-badge {height:13px;width:13px;padding:0}
 </style>
 
-
-
-<ul class="nav navbar-nav navbar-right">
-  <li class="dropdown">
-    <a  class="dropdown-toggle" data-toggle="dropdown">Log In<span class="caret"></span></a>
-    <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
-      <div class="col-lg-12">
-        <div class="text-center">
-
-<body class="login-page pull-right">
-
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="#"><b>Nasty</b>Worldwide</a>
-        </div><!-- /.login-logo -->
-            <p class="login-box-msg">Sign in to start your session</p>
-            <?php echo form_open('auth/validate_credentials'); ?>
-
-                <div class="form-group has-feedback">
-                    <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                </div>
-                <div class="form-group has-feedback">
-                    <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                </div>
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"> Remember Me
-                            </label>
-                        </div>
-                    </div><!-- /.col -->
-                    <div class="col-xs-4">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-
-                        <?php echo form_close(); ?>
-                    </div><!-- /.col -->
-                </div>
-                    </form>
-                        <a href="#">I forgot my password</a><br>
-                    </div><!-- /.login-box-body -->
-                </div><!-- /.login-box -->
-            </div>
-        </div>
-    </ul>
-</li>
-</ul>
-
 <div class="wrapper">
   <div class="container">
 
@@ -99,12 +78,45 @@
 
 
                         <div style="height: 150px">
-                            <a href="<?= site_url('login/raw'); ?>">
-                                <img src="<?= base_url(); ?>/assets/uploads/files/od.png" alt="logo" class="dropdown-toggle img-responsive center-block" data-toggle="dropdown" width="152" height="144"/>
-                                <span class="caret"></span></button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                <li>Test</li>
-                            </a>
+
+                                <input type="image" src="<?= base_url(); ?>/assets/uploads/files/od.png"
+                                    alt="logo" class="goright img-responsive center-block"  width="152" height="144"/>
+
+
+
+                                    <div class="login-box odbox" id="odbox">
+                                        <div class="login-logo">
+                                            <a href="#"><b>Nasty</b>Worldwide</a>
+                                        </div><!-- /.login-logo -->
+                                            <p class="login-box-msg">Sign in to start your session</p>
+                                            <?php echo form_open('auth/validate_credentials'); ?>
+
+                                                <div class="form-group has-feedback">
+                                                    <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
+                                                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-8">
+                                                        <div class="checkbox icheck">
+                                                            <label>
+                                                                <input type="checkbox"> Remember Me
+                                                            </label>
+                                                        </div>
+                                                    </div><!-- /.col -->
+                                                    <div class="col-xs-4">
+                                                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+
+                                                        <?php echo form_close(); ?>
+                                                    </div><!-- /.col -->
+                                                </div>
+                                                    </form>
+                                                        <a href="#">I forgot my password</a><br>
+                                                    </div><!-- /.login-box-body -->
+
                         </div>
                         <div class="clearfix" style="height: 20px"></div>
                         <div class="row">
@@ -115,10 +127,45 @@
       </div>
       <div class="mySlides" style="width:100%">
             <div class="col-md-12">
-                    <div style="height: 150px">
-                        <a href="<?= site_url('login/finish'); ?>">
-                            <img src="<?= base_url(); ?>/assets/uploads/files/btj.png" alt="logo" class="img-responsive center-block" width="162" height="130"/>
-                        </a>
+                <div style="height: 150px">
+
+                        <input type="image" src="<?= base_url(); ?>/assets/uploads/files/btj.png"
+                            alt="logo" class="goleft img-responsive center-block"  width="152" height="144"/>
+
+
+
+                            <div class="login-box btjbox" id="btjbox">
+                                <div class="login-logo">
+                                    <a href="#"><b>Big</b>TimeJuice</a>
+                                </div><!-- /.login-logo -->
+                                    <p class="login-box-msg">Sign in to start your session</p>
+                                    <?php echo form_open('auth/validate_credentials'); ?>
+
+                                        <div class="form-group has-feedback">
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
+                                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-8">
+                                                <div class="checkbox icheck">
+                                                    <label>
+                                                        <input type="checkbox"> Remember Me
+                                                    </label>
+                                                </div>
+                                            </div><!-- /.col -->
+                                            <div class="col-xs-4">
+                                                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+
+                                                <?php echo form_close(); ?>
+                                            </div><!-- /.col -->
+                                        </div>
+                                            </form>
+                                                <a href="#">I forgot my password</a><br>
+                                            </div><!-- /.login-box-body -->
                     </div>
                         <div class="clearfix" style="height: 20px"></div>
                       <div class="row">
@@ -163,6 +210,11 @@
               increaseArea: '20%' // optional
           });
       });
+
+    $('.bukatutup').click(function() {
+    $('#logbox').toggle('slow');
+    });
+
   </script>
 <script>
 var slideIndex = 1;
