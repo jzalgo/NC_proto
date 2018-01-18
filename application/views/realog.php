@@ -23,17 +23,7 @@
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-      <script>
 
-      $('#goright').click(function() {
-      $('#odbox').toggle('fast');
-      });
-
-      $('#goleft').click(function() {
-      $('#btjbox').toggle('fast');
-      });
-
-      </script>
 
 </head>
 
@@ -48,8 +38,8 @@
 #btjbox {
     margin-top: 0px;
     margin-bottom: 1000px;
-    margin-right: 500px;
-    margin-left: 0px;
+    margin-right: 0px;
+    margin-left: 500px;
 }
 
 .mySlides {
@@ -80,13 +70,13 @@
                         <div style="height: 150px">
 
                                 <input type="image" src="<?= base_url(); ?>/assets/uploads/files/od.png"
-                                    alt="logo" class="goright img-responsive center-block"  width="152" height="144"/>
+                                    alt="logo" class="goright img-responsive center-block" width="152" height="144"/>
 
 
 
-                                    <div class="login-box odbox" id="odbox">
+                                    <div class="login-box" id="odbox">
                                         <div class="login-logo">
-                                            <a href="#"><b>Nasty</b>Worldwide</a>
+                                            <a href="#"><b>Or</b>dys</a>
                                         </div><!-- /.login-logo -->
                                             <p class="login-box-msg">Sign in to start your session</p>
                                             <?php echo form_open('auth/validate_credentials'); ?>
@@ -133,39 +123,40 @@
                             alt="logo" class="goleft img-responsive center-block"  width="152" height="144"/>
 
 
+                                        <div class="login-box" id="btjbox">
+                                            <div class="login-logo">
+                                                <a href="#"><b>Big</b>TimeJuice</a>
+                                            </div><!-- /.login-logo -->
+                                                <p class="login-box-msg">Sign in to start your session</p>
+                                                <?php echo form_open('auth/validate_credentials'); ?>
 
-                            <div class="login-box btjbox" id="btjbox">
-                                <div class="login-logo">
-                                    <a href="#"><b>Big</b>TimeJuice</a>
-                                </div><!-- /.login-logo -->
-                                    <p class="login-box-msg">Sign in to start your session</p>
-                                    <?php echo form_open('auth/validate_credentials'); ?>
+                                                    <div class="form-group has-feedback">
+                                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
+                                                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                                                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8">
+                                                            <div class="checkbox icheck">
+                                                                <label>
+                                                                    <input type="checkbox"> Remember Me
+                                                                </label>
+                                                            </div>
+                                                        </div><!-- /.col -->
+                                                        <div class="col-xs-4">
+                                                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
 
-                                        <div class="form-group has-feedback">
-                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
-                                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                        </div>
-                                        <div class="form-group has-feedback">
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
-                                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xs-8">
-                                                <div class="checkbox icheck">
-                                                    <label>
-                                                        <input type="checkbox"> Remember Me
-                                                    </label>
-                                                </div>
-                                            </div><!-- /.col -->
-                                            <div class="col-xs-4">
-                                                <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                                                            <?php echo form_close(); ?>
+                                                        </div><!-- /.col -->
+                                                    </div>
+                                                        </form>
+                                                            <a href="#">I forgot my password</a><br>
+                                                        </div><!-- /.login-box-body -->
 
-                                                <?php echo form_close(); ?>
-                                            </div><!-- /.col -->
-                                        </div>
-                                            </form>
-                                                <a href="#">I forgot my password</a><br>
-                                            </div><!-- /.login-box-body -->
+
                     </div>
                         <div class="clearfix" style="height: 20px"></div>
                       <div class="row">
@@ -211,11 +202,20 @@
           });
       });
 
-    $('.bukatutup').click(function() {
-    $('#logbox').toggle('slow');
+  </script>
+
+  <script>
+
+  $('.goright').click(function() {
+      $('#odbox').toggle('fast');
+  });
+
+  $('.goleft').click(function() {
+      $("#btjbox").toggle('fast');
     });
 
   </script>
+
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
