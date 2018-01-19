@@ -29,17 +29,24 @@
 
 <style>
 #odbox {
-    margin-top: 0px;
-    margin-bottom: 1000px;
+    margin-top: 150px;
+    margin-bottom: 0px;
     margin-right: 0px;
-    margin-left: 500px;
+    margin-left: 55px;
 }
 
 #btjbox {
-    margin-top: 0px;
-    margin-bottom: 1000px;
+    margin-top: 150px;
+    margin-bottom: 0px;
     margin-right: 0px;
-    margin-left: 500px;
+    margin-left: 55px;
+}
+
+#oembox {
+    margin-top: 150px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 55px;
 }
 
 .mySlides {
@@ -54,7 +61,8 @@
   animation-name: fade;
   animation-duration: 1.5s;
 }
-.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-left, .w3-right, .w3-badge {
+    cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
 </style>
 
@@ -166,10 +174,44 @@
       </div>
       <div class="mySlides" style="width:100%">
             <div class="col-md-12">
-                     <div style="height: 150px">
-                        <a href="<?= site_url('login/lab'); ?>">
-                             <img src="<?= base_url(); ?>/assets/uploads/files/oem.png" alt="logo" class="img-responsive center-block" width="152" height="143"/>
-                        </a>
+                <div style="height: 150px">
+
+                        <input type="image" src="<?= base_url(); ?>/assets/uploads/files/oem.png"
+                            alt="logo" class="gobott img-responsive center-block"  width="152" height="144"/>
+
+
+                                        <div class="login-box" id="oembox">
+                                            <div class="login-logo">
+                                                <a href="#"><b>OE</b>M</a>
+                                            </div><!-- /.login-logo -->
+                                                <p class="login-box-msg">Sign in to start your session</p>
+                                                <?php echo form_open('auth/validate_credentials'); ?>
+
+                                                    <div class="form-group has-feedback">
+                                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username"/>
+                                                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="form-group has-feedback">
+                                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password"/>
+                                                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-8">
+                                                            <div class="checkbox icheck">
+                                                                <label>
+                                                                    <input type="checkbox"> Remember Me
+                                                                </label>
+                                                            </div>
+                                                        </div><!-- /.col -->
+                                                        <div class="col-xs-4">
+                                                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+
+                                                            <?php echo form_close(); ?>
+                                                        </div><!-- /.col -->
+                                                    </div>
+                                                        </form>
+                                                            <a href="#">I forgot my password</a><br>
+                                                        </div><!-- /.login-box-body -->
                     </div>
                     <div class="clearfix" style="height: 20px"></div>
                       <div class="row">
@@ -179,11 +221,11 @@
       </div>
 
       <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:60%">
-        <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-        <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        <div class="w3-left w3-yellow w3-hover-text-red" onclick="plusDivs(-1)">&#10094;</div>
+        <div class="w3-right w3-yellow w3-hover-text-red" onclick="plusDivs(1)">&#10095;</div>
+        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(1)"></span>
+        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(2)"></span>
+        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(3)"></span>
       </div>
   </div>
 </div>
@@ -212,6 +254,10 @@
 
   $('.goleft').click(function() {
       $("#btjbox").toggle('fast');
+    });
+
+  $('.gobott').click(function() {
+    $("#oembox").toggle('fast');
     });
 
   </script>
