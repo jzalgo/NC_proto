@@ -28,6 +28,13 @@
 </head>
 
 <style>
+
+body   {
+
+    background-color:  #a3a3c2;
+
+}
+
 #odbox {
     margin-top: 150px;
     margin-bottom: 0px;
@@ -47,6 +54,13 @@
     margin-bottom: 0px;
     margin-right: 0px;
     margin-left: 55px;
+}
+
+.hidden {
+    visibility: hidden;
+    over-flow: hidden;
+    width: 0px;
+    height: 0px;
 }
 
 .mySlides {
@@ -221,11 +235,11 @@
       </div>
 
       <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:60%">
-        <div class="w3-left w3-yellow w3-hover-text-red" onclick="plusDivs(-1)">&#10094;</div>
-        <div class="w3-right w3-yellow w3-hover-text-red" onclick="plusDivs(1)">&#10095;</div>
-        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(1)"></span>
-        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(2)"></span>
-        <span class="w3-badge demo w3-border w3-yellow w3-hover-red" onclick="currentDiv(3)"></span>
+        <div class="w3-left w3-grey w3-hover-text-black" onclick="plusDivs(-1)">&#10094;</div>
+        <div class="w3-right w3-grey w3-hover-text-black" onclick="plusDivs(1)">&#10095;</div>
+        <span class="w3-badge demo w3-border w3-purple w3-hover-black" onclick="currentDiv(1)"></span>
+        <span class="w3-badge demo w3-border w3-purple w3-hover-black" onclick="currentDiv(2)"></span>
+        <span class="w3-badge demo w3-border w3-purple w3-hover-black" onclick="currentDiv(3)"></span>
       </div>
   </div>
 </div>
@@ -248,16 +262,34 @@
 
   <script>
 
-  $('.goright').click(function() {
+  $(document).ready(function() {
+      var odbox = $('p');
+      $('#odbox').hide();
+
+  $('.goright').click(function(e) {
       $('#odbox').toggle('fast');
+      e.preventDefault();
+  });
   });
 
-  $('.goleft').click(function() {
+  $(document).ready(function() {
+      var btjbox = $('p');
+      $('#btjbox').hide();
+
+  $('.goleft').click(function(e) {
       $("#btjbox").toggle('fast');
+      e.preventDefault();
+    });
     });
 
-  $('.gobott').click(function() {
+    $(document).ready(function() {
+        var oembox = $('p');
+        $('#oembox').hide();
+
+  $('.gobott').click(function(e) {
     $("#oembox").toggle('fast');
+    e.preventDefault();
+    });
     });
 
   </script>
